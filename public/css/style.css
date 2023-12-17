@@ -1,0 +1,950 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: monospace;
+}
+
+a{
+  cursor: pointer;
+}
+
+body {
+  padding-top: 60px;
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+}
+
+.header a{
+  text-decoration: none;
+}
+
+.imgDiv p{
+  width: 150px;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 5px;
+  color: #fff;
+}
+
+.navbar {
+  width: 60%;
+}
+
+.navbar-toggler {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+  display: none;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  /* background: black; */
+  font-style: normal;
+  list-style: none;
+}
+
+nav ul{
+  align-items: center;
+}
+
+ul a{
+  text-decoration: none;
+  color: white;
+  /* font-family: monospace; */
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: all .4s;
+}
+
+ul a:hover{
+  background-color: #fff;
+  color: black;
+}
+
+/* icons */
+
+.homeIcon{
+  display: flex;
+  gap: 5px;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  font: 18px "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0px;
+  background: #1100ff;
+  color: white;
+  z-index: 100;
+}
+
+.students-link {
+  position: relative;
+}
+
+.students-drop-down {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  min-width: 220px;
+  min-height: 100px;
+  padding-top: 29px;
+  background-color: transparent;
+  z-index: 1;
+  transition: .3s ease-in-out;
+}
+
+.students-drop-down a,i{
+  padding: 5px 10px;
+  background-color: #5046d8;
+  margin-bottom: 5px;
+  color: #fff;
+  transition: .3s;
+}
+
+.p{
+  cursor: pointer;
+  font-family: monospace;
+  color: white;
+  margin-right: 20px;
+}
+
+.students-drop-down a:hover{
+  background-color: #1100ff;
+  color: #fff;
+}
+
+.students-drop-down.classic {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.students-link:hover .students-drop-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.login-toggler {
+  width: 110px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+  }
+
+  ul {
+    flex-direction: column;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .navbar li a {
+    margin: 0 0 0 10px;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .header {
+    padding: 0 clamp(1rem, 1rem + 5vw, 5rem);
+    justify-content: space-between;
+  }
+
+}
+
+.wrapper{
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notice
+{
+  width: 100%;
+  min-height: 500px;
+  background-color: rgba(144, 155, 198, 0.306);
+  backdrop-filter: blur(1px);
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 20px 5px;
+  border: 1px solid #fff;
+}
+
+strong{
+  text-align: center;
+  font-size: 24px;
+  color: #000000;
+}
+
+.updates{
+  width: 80%;
+  min-height: 500px;
+  background-color: rgba(128, 144, 206, 0.306);
+  margin: 100px calc(20%/2);
+  border-radius: 15px;
+  border-top: 15px solid #1100ff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.news,.industry,.students{
+  width: 300px;
+  height: 380px;
+  /* border: 1px solid white; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.icon{
+  margin-bottom: 20px;
+}
+
+.news h2,
+    .industry h2,
+    .students h2{
+      margin-bottom: 10px;
+    }
+
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1;
+  height: 200px;
+  overflow: hidden;
+}
+
+.text {
+  animation: scroll linear infinite 12s;
+  transform: translateY(100%);
+  z-index: -100;
+  line-height: 1.5;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(100%); 
+  }
+  25% {
+    transform: translateY(50%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  75% {
+    transform: translateY(-50%);
+  }
+  100%{
+    transform: translateY(-100%);
+  }
+  
+}
+
+.textBox2 p{
+  margin: 5px 0 0;
+  line-height: 1.5;
+}
+
+#industrySignIn,#studentsSignIn{
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #fff;
+  margin: 20px 0;
+  background-color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.admin-login{
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #fff;
+  margin: 20px 0;
+  text-decoration: none;
+  margin-left: 100px;
+  border-radius: 5px;
+}
+
+.wrapper h2{
+  text-align: center;
+  font-size: 24px;
+}
+
+.wrapper img{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+footer{
+  width: 100%;
+  height: 60px;
+  background-color: #1100ff;
+  padding: 0 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.leftFooter{
+  flex: 2;
+  height: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.leftFooter p{
+  min-width: 100px;
+  font-size: 15px;
+}
+
+.rightFooter{
+flex: 1;
+}
+
+.social-media-links{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.social-media-links a{
+  width: 50px;
+  height: 50px;
+}
+
+/* placement portal */
+
+.heading{
+  width: 100%;
+  height: 300px;
+  background-color: #5046d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading h2{
+  width: 100%;
+  height: 50px;
+  padding-left: 100px;  
+}
+
+.instructions{
+  width: 100%;
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.forRecruiters{
+  width: 100%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+.forRecruiters ul ,.forStudents ul{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: circle;
+  padding-left: 150px ;
+  line-height: 1.8;
+}
+
+.forRecruiters ul li button{
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.forRecruiters h2,.forStudents h2{
+  padding-left: 100px;
+  
+}
+
+.forStudents{
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+.forStudents ul li button{
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.forStudetns h2{
+  padding: 0;
+}
+
+/* login */
+
+.form-body{
+  background-color: rgb(255, 255, 255);
+}
+
+.form-container{
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.form-wrapper{
+  width: 400px;
+  min-height: 500px;
+  background-color: black;
+  /* background-color: antiquewhite; */
+  background-size: cover;
+  opacity: 0.8;
+  border-radius: 0 50px 0;
+  
+}
+
+.form{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.form-heading{
+  width: 60%;
+  height: 80px;
+  margin: 20px 0 20px;
+  margin-left: calc(40%/2);
+  /* background-color: #1100ff; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 40px  0;
+  color: #fff;
+  border: 5px solid #1100ff;
+  
+}
+.form-details{
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-color: aqua; */
+}
+
+.form-details input{
+  width: 60%;
+  padding: 10px 20px;
+  outline: none; 
+  border-radius: 0px;
+  background: transparent;
+  border-bottom: 2px solid #fff;
+  color: white;
+  font-size: 16px;
+  /* border-radius: 0 20px 0; */
+}
+
+.form-details button{
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: .3s;
+  border: none;
+}
+
+.form-details button:hover{
+  background-color: #1100ff;
+  color: #fff;
+  border-radius: 0 20px 0;
+  border: none;
+
+}
+
+.form-details p{
+  color: #fff;
+}
+
+.form-details p a{
+  color: #fff;
+}
+
+
+.form-details input::placeholder{
+  font-size: 16px;
+  color: #fff;
+}
+
+/* recruiter */
+
+.head{
+  width: 95%;
+  height: 80px;
+  position: fixed;
+  top: 20px;
+  margin: 0 calc(5%/2);
+  background-color: #1100ff;
+  border-radius: 15px;
+  font: 18px "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 100;
+} 
+
+.logout button{
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #fff;
+  margin-left: 80%;
+}
+
+
+.logout button:hover{
+  background-color: #1100ff;
+  color: #fff;
+}
+
+
+
+.head button{
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #fff;
+}
+
+.head button:hover{
+  background-color: #fff;
+  color: #1100ff;
+}
+
+.div-content{
+  margin-top: 80px;
+  width: 100%;
+  min-height: 500px;
+  /* background-color: rgb(255, 255, 255); */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.div-content h2{
+  width: 40%;
+  height: 100%;
+  padding: 0 0 0 15px;
+  font-size: 100px;
+  
+}
+
+/* student home page */
+
+
+.student-nav ul{
+  gap: 20px;
+}
+
+.div-content2 h2{
+  font-size: 90px;
+}
+
+/* student jobs */
+
+.jobs-head{
+  padding: 0 50px;
+  justify-content: space-between;
+}
+
+/* recruiter signup */
+
+.form-wrapper2{
+  width: 400px;
+  min-height: 550px;
+  background-color: black;
+  /* background-color: antiquewhite; */
+  background-size: cover;
+  opacity: 0.8;
+  border-radius: 0 50px 0;
+}
+
+/* delete recruiters */
+
+#all-recruiters{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #5046d8;
+  margin-top: 50px;
+  padding: 10px 20px 0;
+}
+
+/* Added styles for the recruiters table */
+.recruiters-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.recruiters-table th, .recruiters-table td {
+  padding: 8px;
+  border: 1px solid #ffffff;
+  text-align: left;
+}
+
+/* Added styles for the delete button */
+.delete-recruiter {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .3s;
+  font-size: 18px;
+}
+
+.delete-recruiter:hover{
+  background-color: red;
+  color: #fff;
+}
+
+/* delete students */
+
+#all-students{
+  width: 100%;
+  min-height: 500px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 50px;
+  padding: 10px 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.student-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: monospace;
+  background-color: #3947df;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.student-card p {
+  margin: 5px 0;
+}
+
+.student-card button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  width: 20%;
+  font-size: 14px;
+  padding: 10px 10px;
+  margin-left: calc(80%/2);
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+.student-card button:hover {
+  background-color: rgb(255, 0, 0);
+}
+
+/* posted jobs */
+
+#all-jobs{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(47, 41, 41);
+  margin-top: 50px;
+  padding: 10px 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.job-card {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  height: 300px;
+  margin: 10px;
+  color: #fff;
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h3 {
+  color: #fff;
+}
+
+.job-card p {
+  margin: 5px 0;
+}
+
+.delete-button {
+  background-color: #000000;
+  color: #fff;
+  width: 35%;
+  margin-top: 20px;
+  margin-left: calc(65%/2);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: .3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.delete-button:hover {
+  background-color: #ff0000;
+}
+
+/* applications */
+#explore-all-jobs{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 50px;
+  padding: 10px 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.apply-button{
+  width: 35%;
+  margin: 10px calc(65%/2) 0;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+}
+
+.apply-button:hover{
+  background-color: #1100ff;
+  color: #fff;
+}
+
+.apply-button.disabled-button {
+  background-color: grey; /* Disabled background color */
+  cursor: not-allowed;
+}
+
+
+/* applications */
+
+#all-applications,#all-profiles{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(194, 183, 183);
+  margin-top: 50px;
+  padding: 10px 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style for application card */
+.application-card {
+  height: 300px; 
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.application-card p{
+  margin: 10px 0;
+}
+
+/* Style for accept button */
+.accept-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Style for reject button */
+.reject-button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Style for status */
+.status {
+  font-weight: bold;
+}
+
+/* Apply custom styles when button is disabled */
+.accept-button:disabled,
+.reject-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* profiles */
+.profile-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  background-color: #1100ff;
+}
+
+.profile-card:hover {
+  transform: scale(1.03);
+}
+
+.profile-card h3 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.profile-card p {
+  margin: 8px 0;
+  color: #fff;
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.profile-card p p{
+  margin: 0;
+  display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

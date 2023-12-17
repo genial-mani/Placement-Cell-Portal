@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIITV-ICD Placement Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="head">
+        <nav class="nav">
+            <ul>
+                <li class="students-link">
+                    <a href="">Post Jobs</a>
+                    <div class="students-drop-down">
+                        <a href="/post-jobs">Post New Job</a>
+                        <a href="/posted-jobs">Posted Jobs</a>
+                      </div>
+                </li>
+                <li><a href="">Applications</a></li>
+                <li><a href="/student-profiles">Student Profiles</a></li>
+            </ul>
+        </nav>
+        <a href="/recruiter-dashboard"><button>> back</button></a>
+    </header>
+
+    <div class="form-container">
+        <div class="form-wrapper2">
+            <form action="/post-jobs" method="POST" class="form">
+                <div class="form-heading">
+                    <h2>Post Job</h2>
+                </div>
+                <div class="form-details">
+                    <input type="text" name="role" placeholder="Role">
+                    <input type="text" name="company_name" placeholder="Comapany Name">
+                    <input type="text" name="type" placeholder="Type">
+                    <input type="text" name="salary" placeholder="salary">
+                    <input type="text" name="description" placeholder="Description">
+                    <button>Proceed</button>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body> 
+</html>

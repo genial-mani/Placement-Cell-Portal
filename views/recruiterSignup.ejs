@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIITV-ICD Placement Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="head">
+        <nav class="nav">
+            <ul>
+                <li class="students-link" id="studentsLink">
+                    <p class="p">Manage Recruiters</p>
+                    <div class="students-drop-down" id="students-drop-down">
+                        <a href="/register-recruiter">Add Recruiter</a>
+                        <a href="/delete-recruiter">Delete Recruiter</a>
+                    </div>
+                </li>
+                    <li class="students-link" id="recruitersLink">
+                    <p class="p">Manage Students</p>
+                    <div class="students-drop-down">
+                        <a href="/register-student">Add Student</a>
+                        <a href="/delete-student">Delete Student</a>
+                    </div>
+                </li>
+                
+            </ul>
+        </nav>
+        <a href="/admin-dashboard"><button> > Back</button></a>
+    </header>
+    <div class="form-container">
+        <div class="form-wrapper2">
+            <form action="/add-recruiter" method="POST" class="form">
+                <div class="form-heading">
+                    <h2>Register Recruiter</h2>
+                </div>
+                <div class="form-details">
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="company_name" placeholder="Company Name">
+                    <input type="email" name="email" placeholder="Email Address">
+                    <input type="text" name="phone_number" placeholder="Mobile Number">
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="password" name="password" placeholder="Password">
+                    <button>Proceed</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
